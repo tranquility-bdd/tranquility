@@ -22,4 +22,4 @@ jobs:
             - ~/.m2
           key: tranquility-bdd-{{ checksum "pom.xml" }}
 
-      - run: mvn test
+      - run: mvn clean install
