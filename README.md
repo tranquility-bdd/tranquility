@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/tranquility-bdd/tranquility-bdd.svg?style=svg)](https://circleci.com/gh/tranquility-bdd/tranquility-bdd)
+
 # tranquility-bdd
 a lightweight dependency/bloat-free alternative to serenity-rest-assured and serenity-core
 
