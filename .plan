@@ -25,3 +25,5 @@ Promise/callback -> Func
 Environment is a  Memory Resource
 
  https://github.com/robertkrimen/otto
+ https://github.com/olebedev/go-duktape
+ https://golang.org/pkg/syscall/js/
