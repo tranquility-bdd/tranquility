@@ -1,0 +1,27 @@
+Scenario (Environment)
+
+	RequestUnit{
+		Prequest {}
+		Request {}
+		Test {}
+	}
+
+
+	...
+
+Prequest - define "code"? (can alter env)
+Request - drink from env - and then replace stuff in URL, headers, params, body -> http request - save the HTTP response
+Test - define "code"? (can alter env) (can interact with HTTP Response)
+
+
+Prequest(Promise/callback ->)
+
+Environemnt - can be read from a file
+
+Abstraction -> CodeExec is Prerequest
+
+Promise/callback -> Func
+
+Environment is a  Memory Resource
+
+ https://github.com/robertkrimen/otto
