@@ -3,19 +3,14 @@
 # tranquility-bdd
 a lightweight dependency/bloat-free alternative to serenity-rest-assured and serenity-core
 
-## How to build
+## The mission
+- **fast** - be more maintainable than postman - but equally as fast to develop full-length check suites as postman
+- **featherweight** - little dependencies (contrasting to serenity 170+ dependencies, or newmans 140+ dependencies)
+- **flexible** - do not lock the user to a "BDD" approach where user is forced to use Gherkin in order to use `tranquility`
 
-Using maven (version 3, Java 8):
-```
-mvn clean install
-```
-
-## Desired features (work in progress)
-
-- ? extend Cucumber runtime (similar to CucumberWithSerenity)
-- mimic serenity’s RequestSpecification class (maybe? maybe not needed - users could simply use restassured)
-- mimic “setting environment variables” like Serenity
-- support cucumber reports
-- return html reports (with clear request, response and curl requests) similar to the ones of serenity (simple ones, plain html, no javascript clutter, maybe tacit css for making it less bland than normal html)
-- option to log requests in curl format (in case of rest assured flavour)  during test execution
-- suport gradle and maven projects
+## Feature roadmap (2 June 2019)
+- *(MVP)* Users can code their actions and manipulate environment (which influences actions)
+- *(MVP)* Create example repository that uses MVP version of tranquility with `gucumber`
+- Users can use PreAction and Test template/abstractions as part of their tests, if they opt for a unit approach
+- Users can define "Lego piece" of the 3 main components - PreAction, Action and Test
+- (Optional/Doubt/Nice-to-have) Be able to export Scenarios built with Lego pieces to JSONs that obey postman schema
