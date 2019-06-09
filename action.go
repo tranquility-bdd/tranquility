@@ -3,6 +3,7 @@ package tranquility
 import (
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
 //Action provides an abstraction for Http Request basic parameters
@@ -26,7 +27,7 @@ type Response struct {
 
 //Run perfoms a HTTP response based on the parameters of the action and parses the result into a Response
 func (action Action) Run() (*Response, error) {
-	req, err := http.NewRequest(action.Method, action.URL, nil)
+	req, err := http.NewRequest(action.Method, action.URL, strings.NewReader(action.Body))
 	if err != nil {
 		return nil, err
 	}
