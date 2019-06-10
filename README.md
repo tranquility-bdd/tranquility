@@ -4,7 +4,7 @@
 a lightweight dependency/bloat-free alternative to serenity-rest-assured and serenity-core
 
 ## The mission
-- **fast** - be more maintainable than postman - but equally as fast to develop full-length check suites as postman
+- **maintainable** - be more maintainable than postman - with little clutter - but equally as fast to develop full-length check suites as postman
 - **featherweight** - little dependencies (contrasting to serenity 170+ dependencies, or newmans 140+ dependencies)
 - **flexible** - do not lock the user to a "BDD" approach where user is forced to use Gherkin in order to use `tranquility`
 
