@@ -1,5 +1,5 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5a8c1957079146108d37c090167f1f58)](https://app.codacy.com/app/filfreire/tranquility-bdd?utm_source=github.com&utm_medium=referral&utm_content=tranquility-bdd/tranquility-bdd&utm_campaign=Badge_Grade_Dashboard)
-[![CircleCI](https://circleci.com/gh/tranquility-bdd/tranquility-bdd.svg?style=svg)](https://circleci.com/gh/tranquility-bdd/tranquility-bdd)
+[![CircleCI](https://circleci.com/gh/tranquility-bdd/tranquility.svg?style=svg)](https://circleci.com/gh/tranquility-bdd/tranquility)
 
 # tranquility
 a lightweight dependency/bloat-free alternative to serenity-rest-assured and serenity-core
