@@ -15,3 +15,8 @@ a lightweight dependency/bloat-free alternative to serenity-rest-assured and ser
 - Users can use PreAction and Test template/abstractions as part of their tests, if they opt for a unit approach
 - Users can define "Lego piece" of the 3 main components - PreAction, Action and Test
 - (Optional/Doubt/Nice-to-have) Be able to export Scenarios built with Lego pieces to JSONs that obey postman schema
+
+## Usage
+In case you area already using [Go modules](https://github.com/golang/go/wiki/Modules) you can just include `"github.com/tranquility-bdd/tranquility"` in your import statement.
+
+Otherwise you can use the command `go get "github.com/tranquility-bdd/tranquility"` to download the package and then import it as before.
