@@ -1,4 +1,5 @@
 [![GoDoc](https://godoc.org/github.com/tranquility-bdd/tranquility?status.svg)](https://godoc.org/github.com/tranquility-bdd/tranquility)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5a8c1957079146108d37c090167f1f58)](https://app.codacy.com/app/filfreire/tranquility-bdd?utm_source=github.com&utm_medium=referral&utm_content=tranquility-bdd/tranquility-bdd&utm_campaign=Badge_Grade_Dashboard)
 [![CircleCI](https://circleci.com/gh/tranquility-bdd/tranquility.svg?style=svg)](https://circleci.com/gh/tranquility-bdd/tranquility)
 
