@@ -4,6 +4,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
+	"text/template"
+	"bytes"
 )
 
 //Action provides an abstraction for Http Request basic parameters
@@ -25,17 +27,42 @@ type Response struct {
 	Request       *http.Request
 }
 
-//Run perfoms a HTTP response based on the parameters of the action and parses the result into a Response
-func (action Action) Run() (*Response, error) {
-	req, err := http.NewRequest(action.Method, action.URL, strings.NewReader(action.Body))
+var parser = template.New("env-parser")
+
+//parseString is an auxiliary function to replace templates in a given string
+func parseString(toParsed string) string {
+	var parsed bytes.Buffer
+	tmpl, err := parser.Parse(toParsed)
+	if err != nil  {
+		panic(err)
+	}
+	err  = tmpl.Execute(&parsed,Env)
+	if err != nil  {
+		panic(err)
+	}
+	return parsed.String()
+}
+
+//setup replaces all template variables in URL, Headers and Body preparing the HTTP request to be executed
+func (action Action) setup()  (*http.Request, error) {
+	req, err := http.NewRequest(action.Method, parseString(action.URL), strings.NewReader(parseString(action.Body)))
 	if err != nil {
 		return nil, err
 	}
 	if action.Headers != nil {
 		for k, v := range action.Headers {
-			req.Header.Add(k, v)
+			req.Header.Add(parseString(k), parseString(v))
 		}
 	}
+	return req, nil
+}
+
+//Run perfoms a HTTP response based on the parameters of the action and parses the result into a Response
+func (action Action) Run() (*Response, error) {
+	req, err := action.setup()
+	if err != nil {
+		return nil, err
+	} 
 	res, err := http.DefaultClient.Do(req)
 
 	if err != nil {
