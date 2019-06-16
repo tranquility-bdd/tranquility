@@ -52,7 +52,7 @@ func (action Action) setup() (*http.Request, error) {
 	}
 	if action.Headers != nil {
 		for k, v := range action.Headers {
-			req.Header.Add(parseString(k), parseString(v))
+			req.Header.Add(k, parseString(v))
 		}
 	}
 	return req, nil
