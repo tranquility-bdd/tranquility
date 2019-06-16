@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"strings"
 	"text/template"
 )
@@ -46,7 +47,18 @@ func parseString(toParsed string) string {
 
 //setup replaces all template variables in URL, Headers and Body preparing the HTTP request to be executed
 func (action Action) setup() (*http.Request, error) {
-	req, err := http.NewRequest(action.Method, parseString(action.URL), strings.NewReader(parseString(action.Body)))
+	baseURL, err := url.Parse(parseString(action.URL))
+	if err != nil {
+		return nil, err
+	}
+	if action.Parameters != nil {
+		params := url.Values{}
+		for k, v := range action.Parameters {
+			params.Add(k, parseString(v))
+		}
+		baseURL.RawQuery = params.Encode()
+	}
+	req, err := http.NewRequest(action.Method, baseURL.String(), strings.NewReader(parseString(action.Body)))
 	if err != nil {
 		return nil, err
 	}
