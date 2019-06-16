@@ -1,11 +1,11 @@
 package tranquility
 
 import (
+	"bytes"
 	"io/ioutil"
 	"net/http"
 	"strings"
 	"text/template"
-	"bytes"
 )
 
 //Action provides an abstraction for Http Request basic parameters
@@ -33,18 +33,19 @@ var parser = template.New("env-parser")
 func parseString(toParsed string) string {
 	var parsed bytes.Buffer
 	tmpl, err := parser.Parse(toParsed)
-	if err != nil  {
+	if err != nil {
 		panic(err)
 	}
-	err  = tmpl.Execute(&parsed,Env)
-	if err != nil  {
+	tmpl.Option("missingkey=error")
+	err = tmpl.Execute(&parsed, Env)
+	if err != nil {
 		panic(err)
 	}
 	return parsed.String()
 }
 
 //setup replaces all template variables in URL, Headers and Body preparing the HTTP request to be executed
-func (action Action) setup()  (*http.Request, error) {
+func (action Action) setup() (*http.Request, error) {
 	req, err := http.NewRequest(action.Method, parseString(action.URL), strings.NewReader(parseString(action.Body)))
 	if err != nil {
 		return nil, err
@@ -62,7 +63,7 @@ func (action Action) Run() (*Response, error) {
 	req, err := action.setup()
 	if err != nil {
 		return nil, err
-	} 
+	}
 	res, err := http.DefaultClient.Do(req)
 
 	if err != nil {
