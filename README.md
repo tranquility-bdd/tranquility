@@ -12,7 +12,7 @@ a lightweight dependency/bloat-free alternative to serenity-rest-assured and ser
 - **Flexible**: do not lock the user to a "BDD" approach where user is forced to use Gherkin in order to use `tranquility`
 
 ## Feature roadmap (2 June 2019)
-- *(MVP)* Users can code their actions and manipulate environment (which influences actions) 🏃
+- *(MVP)* Users can code their actions and manipulate environment (which influences actions) ✅
 - *(MVP)* Create example repository that uses MVP version of tranquility with `gucumber` ✅
 - Users can use PreAction and Test template/abstractions as part of their tests, if they opt for a unit approach
 - Users can define "Lego piece" of the 3 main components - PreAction, Action and Test
