@@ -9,10 +9,14 @@ type Request struct {
 
 //Run perfoms the full request in the following order PreAction, Action and Test
 func (req Request) Run() {
-	req.PreAction(req.Action)
+	if req.PreAction != nil {
+		req.PreAction(req.Action)
+	}
 	res, err := req.Action.Run()
 	if err != nil {
 		panic(err)
 	}
-	req.Test(res)
+	if req.Test != nil {
+		req.Test(res)
+	}
 }
