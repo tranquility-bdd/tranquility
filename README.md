@@ -14,8 +14,9 @@ a lightweight dependency/bloat-free alternative to serenity-rest-assured and ser
 ## Feature roadmap (2 June 2019)
 - *(MVP)* Users can code their actions and manipulate environment (which influences actions) ✅
 - *(MVP)* Create example repository that uses MVP version of tranquility with `gucumber` ✅
-- Users can use PreAction and Test template/abstractions as part of their tests, if they opt for a unit approach
-- Users can define "Lego piece" of the 3 main components - PreAction, Action and Test
+- Users can use PreAction and Test template/abstractions as part of their tests, if they opt for a unit approach ✅
+- Users can define "Lego piece" of the 3 main components - PreAction, Action and Test ✅
+- Users can import Postman environment Json files to pre-fill `Env` with the config data ✅
 - (Optional/Doubt/Nice-to-have) Be able to export Scenarios built with Lego pieces to JSONs that obey postman schema
 
 ## Usage
