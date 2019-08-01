@@ -15,7 +15,7 @@ a lightweight dependency/bloat-free alternative to serenity-rest-assured and ser
 
 ## Requirements
 
-Make sure you have [go](link) installed. Latest version we've tried on was `go1.12.7 darwin/amd64`
+Make sure you have [go](https://golang.org/) installed. Latest version we've tried on was `go1.12.7 darwin/amd64`
 
 
 ## How to use
