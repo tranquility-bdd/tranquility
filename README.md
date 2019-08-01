@@ -17,6 +17,9 @@ a lightweight dependency/bloat-free alternative to serenity-rest-assured and ser
 
 Make sure you have [go](https://golang.org/) installed. Latest version we've tried on was `go1.12.7 darwin/amd64`
 
+In case you area already using [Go modules](https://github.com/golang/go/wiki/Modules) you can just include `"github.com/tranquility-bdd/tranquility"` in your import statement.
+
+Otherwise you can use the command `go get "github.com/tranquility-bdd/tranquility"` to download the package and then import it as before.
 
 ## How to use
 
@@ -148,8 +151,3 @@ You can check out a full example of Tranquility [soon](https://tranquility-bdd.c
 
 `tranquility` was built as a pet project by [Jorge Martínez](https://www.linkedin.com/in/jmromanos/) and [Filipe Freire](https://www.linkedin.com/in/filfreire/).
 Feel free to contribute with a Pull-request or a new issue, and reach out with questions and ideas.
-
-## Usage
-In case you area already using [Go modules](https://github.com/golang/go/wiki/Modules) you can just include `"github.com/tranquility-bdd/tranquility"` in your import statement.
-
-Otherwise you can use the command `go get "github.com/tranquility-bdd/tranquility"` to download the package and then import it as before.
