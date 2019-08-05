@@ -82,11 +82,11 @@ func examplesetup(action *tranquility.Action) {
 A `Test` phase, is basically a function where you can perform assertions (or any other work) on the `Action`'s `Response`:
 ```
 func exampletest(res *tranquility.Response) {
-    if res.StatusCode != 200 {
-        panic(1)
-    } else {
+    if res.StatusCode == 200 {
         fmt.Println("http status ✅")
         fmt.Println(res.Body)
+    } else {
+        panic(1)
     }
 }
 ```
